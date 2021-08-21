@@ -1,0 +1,25 @@
+{
+  "name": "gt-web",
+  "version": "1.0.0",
+  "description": "Grade Tracker Web Interface",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brianjiang2200/gt-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brianjiang2200/gt-web/issues"
+  },
+  "homepage": "https://github.com/brianjiang2200/gt-web#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.7"
+  }
+}
