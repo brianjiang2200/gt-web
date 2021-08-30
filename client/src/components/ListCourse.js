@@ -10,7 +10,7 @@ const ListCourse = ({ courses, deleteCourse }) => {
             (
               courses.map(course => {
                 return (
-                  <li key={course._id} onClick={() => deleteCourse(course._id)}>{course.action}</li>
+                  <li key={course._id} onClick={() => deleteCourse(course._id)}>{course.title}</li>
                 )
               })
             )

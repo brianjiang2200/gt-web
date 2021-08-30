@@ -5,18 +5,18 @@ import axios from 'axios';
 class Input extends Component {
 
   state = {
-    action: ""
+    title: ""
   }
 
   addCourse = () => {
-    const task = {action: this.state.action}
+    const newEntry = {title: this.state.title}
 
-    if(task.action && task.action.length > 0){
-      axios.post('/api/courses', task)
+    if(newEntry.title && newEntry.title.length > 0){
+      axios.post('/api/courses', newEntry)
         .then(res => {
           if(res.data){
             this.props.getCourses();
-            this.setState({action: ""})
+            this.setState({title: ""})
           }
         })
         .catch(err => console.log(err))
@@ -27,15 +27,15 @@ class Input extends Component {
 
   handleChange = (e) => {
     this.setState({
-      action: e.target.value
+      title: e.target.value
     })
   }
 
   render() {
-    let { action } = this.state;
+    let { title } = this.state;
     return (
       <div>
-        <input type="text" onChange={this.handleChange} value={action} />
+        <input type="text" onChange={this.handleChange} value={title} />
         <button onClick={this.addCourse}>add course</button>
       </div>
     )

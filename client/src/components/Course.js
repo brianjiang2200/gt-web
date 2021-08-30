@@ -42,7 +42,7 @@ class Course extends Component {
 
     return(
       <div>
-        <h1>My Todo(s)</h1>
+        <h1>My Courses</h1>
         <Input getCourses={this.getCourses}/>
         <ListCourse courses={courses} deleteCourse={this.deleteCourse}/>
       </div>

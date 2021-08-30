@@ -4,13 +4,13 @@ const Course = require('../models/course');
 
 router.get('/courses', (req, res, next) => {
     //this will return all course data
-    Course.find({}, 'action')
+    Course.find({}, 'title')
         .then(data => res.json(data))
         .catch(next)
 });
 
 router.post('/courses', (req, res, next) => {
-    if (req.body.action){
+    if (req.body.title){
         Course.create(req.body)
           .then(data => res.json(data))
           .catch(next)
