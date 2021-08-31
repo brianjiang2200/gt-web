@@ -34,9 +34,9 @@ class Input extends Component {
   render() {
     let { title } = this.state;
     return (
-      <div>
+      <div className="course-input">
         <input type="text" onChange={this.handleChange} value={title} />
-        <button onClick={this.addCourse}>add course</button>
+        <button type="button" className="btn btn-success" onClick={this.addCourse}>add course</button>
       </div>
     )
   }

@@ -6,34 +6,13 @@
   margin-right: auto;
 }
 
-input {
-  height: 40px;
-  width: 50%;
-  border: none;
-  border-bottom: 2px #101113 solid;
-  background: none;
-  font-size: 1.5rem;
+a {
+  text-decoration: none;
   color: #787a80;
 }
 
-input:focus {
-  outline: none;
-}
-
-button {
-  width: 25%;
-  height: 45px;
-  border: none;
-  margin-left: 10px;
-  font-size: 25px;
-  background: #101113;
-  border-radius: 5px;
-  color: #787a80;
-  cursor: pointer;
-}
-
-button:focus {
-  outline: none;
+h1 {
+  font-size: 3rem;
 }
 
 ul {
@@ -52,6 +31,45 @@ li {
   border-radius: 5px;
   overflow-wrap: break-word;
   cursor: pointer;
+}
+
+input {
+  height: 40px;
+  width: 50%;
+  border: none;
+  border-bottom: 2px #101113 solid;
+  background: none;
+  font-size: 1.5rem;
+  color: #787a80;
+}
+
+input:focus {
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+header {
+  margin: 1rem;
+  display: flex;
+  width: 100%;
+}
+.logo-container{
+  font-size: larger;
+  font-weight: 400;
+  flex: 8;
+  text-align: left;
+  vertical-align: middle;
+}
+.menu-container{
+  flex: 2;
+  text-align: right;
+}
+
+.course-input {
+  margin: 2rem;
 }
 
 @media only screen and (min-width: 300px) {
