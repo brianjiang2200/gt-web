@@ -1,0 +1,23 @@
+.course-entry {
+    display: flex;
+    padding: 15px;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    background: #282c34;
+    border-radius: 5px;
+    overflow-wrap: break-word;
+    cursor: pointer;
+}
+.course-entry-title {
+    flex: 9;
+}
+.course-entry-delete {
+    flex: 1;
+}
+.deleteIcon {
+    border-radius: 3px;
+    filter: invert(0.9);
+}
+.deleteIcon:hover {
+    transform: scale(1.1);
+}
