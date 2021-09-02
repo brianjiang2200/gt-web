@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import '../css/ListCourse.css';
 
 import deleteIcon from '../assets/delete-icon.png';
@@ -13,7 +14,7 @@ const ListCourse = ({ courses, deleteCourse }) => {
             (
               courses.map(course => {
                 return (
-                  <li className='course-entry' key={course._id}>
+                  <Link to={`/courses/${course._id}`} className='course-entry' key={course._id}>
                     <div className='course-entry-title'>
                       {course.title}
                     </div>
@@ -21,7 +22,7 @@ const ListCourse = ({ courses, deleteCourse }) => {
                       <img className='deleteIcon' src={deleteIcon} 
                         onClick={() => deleteCourse(course._id)} alt="" width="30"/>
                     </div>
-                  </li>
+                  </Link>
                 );
               })
             )
