@@ -2,6 +2,13 @@ const express = require('express');
 const router = express.Router();
 const Course = require('../models/course');
 
+router.get('/courses/:id', (req, res, next) => {
+    //return requested course data
+    Course.find({"_id": req.params.id})
+        .then(data => res.json(data))
+        .catch(next)
+});
+
 router.get('/courses', (req, res, next) => {
     //this will return all course data
     Course.find({}, 'title')
