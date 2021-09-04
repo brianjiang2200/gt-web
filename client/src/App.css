@@ -8,7 +8,7 @@
 
 a {
   text-decoration: none;
-  color: #787a80;
+  color: #caced6;
 }
 
 h1 {
@@ -30,7 +30,7 @@ input {
   border-bottom: 2px #101113 solid;
   background: none;
   font-size: 1.5rem;
-  color: #787a80;
+  color: #caced6;
 }
 
 input:focus {

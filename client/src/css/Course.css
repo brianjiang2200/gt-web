@@ -1,0 +1,25 @@
+.course-row {
+    margin: 1rem 2rem;
+    display: flex;
+}
+.course-title {
+    flex: 5;
+    text-align: left;
+}
+.projected-avg, .cumulative {
+    flex: 5;
+    font-size: 1.3rem;
+    text-align: right;
+}
+
+.course-description {
+    flex: 5;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.summative-table {
+    margin: 1rem 0rem;
+    color: #caced6;
+    font-size: 1rem;
+}
