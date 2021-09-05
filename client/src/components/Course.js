@@ -7,6 +7,8 @@ import '../css/Course.css';
 class Course extends Component {
 
   state = {
+    projected: 0,
+    cumulative: 0,
     course: [{
       title: "",
       summatives: [],
@@ -24,9 +26,29 @@ class Course extends Component {
     axios.get(`/api/courses/${id}`)
       .then(res => {
         if(res.data){
+          //Set state to returned Data
           this.setState({
+            projected: 0,
+            cumulative: 0,
             course: res.data
-          })
+          });
+          //Compute new projected average
+          let totalWeight = 0;
+          let totalAcquired = 0;
+          let course = this.state.course[0];
+          course.summatives.forEach((summ, index, array) => {
+            const weight = parseFloat(summ.weight['$numberDecimal']);
+            totalWeight += weight;
+            totalAcquired += weight * parseFloat(summ.grade['$numberDecimal']);
+          });
+          //Compute cumulative score
+          this.setState({
+            projected: (totalWeight > 0) ? 
+                (totalAcquired/totalWeight).toFixed(1) : "N/A",
+            cumulative: (totalWeight > 0) ? 
+                (totalAcquired/100.0).toFixed(1) : "N/A",
+            course: this.state.course
+          });
         }
       })
       .catch(err => console.log(err))
@@ -34,7 +56,6 @@ class Course extends Component {
 
   render() {
     let course = this.state.course[0];
-    console.log(course);
     return (
       <div className="course-wrapper">
           <div className="course-row">
@@ -42,7 +63,7 @@ class Course extends Component {
               {course.title}
             </div>
             <div className="projected-avg">
-              Projected Average: <b>86.7</b>
+              Projected Average: <b>{this.state.projected}</b>
             </div>
           </div>
           <div className="course-row">
@@ -50,7 +71,7 @@ class Course extends Component {
               {course.description}
             </div>
             <div className="cumulative">
-              Cumulative: <b>50.4</b>
+              Cumulative: <b>{this.state.cumulative}</b>
             </div>
           </div>
           <hr/>
